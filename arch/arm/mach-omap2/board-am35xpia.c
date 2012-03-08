@@ -1421,7 +1421,7 @@ static int __init pia35x_version_detect(void)
 	}
 	msleep(10);
 	val = gpio_get_value(GPIO_VERSION_DETECT);
-	if (val == 0 && cpu_is_omap3517()) {
+	if (val == 0 && omap3_has_sgx()) {
 		/* piAx hat AM3517, but never GSM module */
 		pr_info("pia35x: piAx with ");
 		pia35x_version = PIA_X_AM3517;
