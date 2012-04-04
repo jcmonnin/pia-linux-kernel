@@ -1266,7 +1266,7 @@ static struct mtd_partition pia35x_nand_partitions[] = {
 		.size           = 32*(SZ_128K)
 	},
 	{ /* */
-		.name           = "jffs2-nand",
+		.name           = "rootfs-nand",
 		.size           = MTDPART_SIZ_FULL,
 		.offset         = MTDPART_OFS_APPEND,
 	},
