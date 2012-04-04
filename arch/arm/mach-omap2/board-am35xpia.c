@@ -950,7 +950,7 @@ static void __init pia35x_can_init(struct ti_hecc_platform_data *pdata)
 
 	if (pia35x_version == PIA_AM3505) {
 		if (gpio_request_one(GPIO_CAN_RES,
-				GPIOF_DIR_OUT | GPIOF_INIT_HIGH, "can.res") != 0) {
+				GPIOF_DIR_OUT | GPIOF_INIT_LOW, "can.res") != 0) {
 			pr_warning("pia35x: unable to request CAN_RES");
 		} else {
 			omap_mux_init_gpio(GPIO_CAN_RES, OMAP_MUX_MODE4 | OMAP_PIN_OUTPUT);
@@ -958,7 +958,7 @@ static void __init pia35x_can_init(struct ti_hecc_platform_data *pdata)
 		}
 	} else if (pia35x_version == PIA_X_AM3517) {
 		if (gpio_request_one(GPIOX_CAN_RES,
-				GPIOF_DIR_OUT | GPIOF_INIT_HIGH, "can.res") != 0) {
+				GPIOF_DIR_OUT | GPIOF_INIT_LOW, "can.res") != 0) {
 			pr_warning("pia35x: unable to request CAN_RES");
 		} else {
 			omap_mux_init_gpio(GPIOX_CAN_RES, OMAP_MUX_MODE4 | OMAP_PIN_OUTPUT);
